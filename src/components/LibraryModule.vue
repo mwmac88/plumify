@@ -10,7 +10,7 @@
     </div>
     <div class="module__body">
       <div class="trackcover" v-for="(track, index) in tracksData.songs" :key="index">
-        <figure class="image is-96x96">
+        <figure class="image trackcover__img">
           <img :src="track.cover" :srcset="`${track.cover} 1x, ${track.cover2x} 2x`" alt="Track Cover">
         </figure>
       </div>
@@ -20,10 +20,10 @@
 
 <script>
 import tracksData from '../assets/tracks.json'
-import TrackCover from './TrackCover'
+// import TrackCover from './TrackCover'
 export default {
   name: 'librarymodule',
-  components: {TrackCover},
+  // components: {TrackCover},
   data () {
     return {
       tracksData: tracksData
@@ -58,5 +58,48 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+  .trackcover__img {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 10px 0;
+
+    @include mq($from: desktop) {
+      width: 95px;
+      height: 95px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url('../assets/ui/icons/play-icon.png');
+      background-color: rgba(0,0,0,0);
+      background-size: 0;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &:before {
+        background-color: rgba(0,0,0,0.7);
+        background-image: url('../assets/ui/icons/play-icon.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0.65;
+        background-size: 50%;
+        transition: background-color 0.3s ease-in-out, background-size 0.2s ease-in-out;
+
+        // Retina 2x Icon
+        @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
+          background-image: url('../assets/ui/icons/play-icon@2x.png');
+        }
+      }
+    }
   }
 </style>

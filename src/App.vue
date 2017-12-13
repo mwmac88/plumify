@@ -4,11 +4,11 @@
       <primary-nav/>
     </header>
     <section class="section section__primary">
-      <div class="columns is-desktop">
-        <div class="column is-7">
+      <div class="columns is-variable is-8 is-desktop">
+        <div class="column is-8">
           <library-module  />
         </div>
-        <div class="column is-4 is-offset-1">
+        <div class="column is-4">
           <activity-module />
         </div>
       </div>

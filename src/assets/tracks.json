@@ -27,6 +27,146 @@
       "artist": "Foobar Artist 4",
       "cover": "/static/covers/album-4.png",
       "cover2x": "/static/covers/album-4@2x.png"
+    },
+    {
+      "id": 5,
+      "title": "Foobar Track 5",
+      "artist": "Foobar Artist 5",
+      "cover": "/static/covers/album-5.png",
+      "cover2x": "/static/covers/album-5@2x.png"
+    },
+    {
+      "id": 6,
+      "title": "Foobar Track 6",
+      "artist": "Foobar Artist 6",
+      "cover": "/static/covers/album-6.png",
+      "cover2x": "/static/covers/album-6@2x.png"
+    },
+    {
+      "id": 7,
+      "title": "Foobar Track 7",
+      "artist": "Foobar Artist 7",
+      "cover": "/static/covers/album-7.png",
+      "cover2x": "/static/covers/album-7@2x.png"
+    },
+    {
+      "id": 8,
+      "title": "Foobar Track 8",
+      "artist": "Foobar Artist 8",
+      "cover": "/static/covers/album-8.png",
+      "cover2x": "/static/covers/album-8@2x.png"
+    },
+    {
+      "id": 9,
+      "title": "Foobar Track 9",
+      "artist": "Foobar Artist 9",
+      "cover": "/static/covers/album-9.png",
+      "cover2x": "/static/covers/album-9@2x.png"
+    },
+    {
+      "id": 10,
+      "title": "Foobar Track 10",
+      "artist": "Foobar Artist 10",
+      "cover": "/static/covers/album-10.png",
+      "cover2x": "/static/covers/album-10@2x.png"
+    },
+    {
+      "id": 11,
+      "title": "Foobar Track 11",
+      "artist": "Foobar Artist 11",
+      "cover": "/static/covers/album-11.png",
+      "cover2x": "/static/covers/album-11@2x.png"
+    },
+    {
+      "id": 12,
+      "title": "Foobar Track 12",
+      "artist": "Foobar Artist 12",
+      "cover": "/static/covers/album-12.png",
+      "cover2x": "/static/covers/album-12@2x.png"
+    },
+    {
+      "id": 13,
+      "title": "Foobar Track 13",
+      "artist": "Foobar Artist 13",
+      "cover": "/static/covers/album-13.png",
+      "cover2x": "/static/covers/album-13@2x.png"
+    },
+    {
+      "id": 14,
+      "title": "Foobar Track 14",
+      "artist": "Foobar Artist 14",
+      "cover": "/static/covers/album-14.png",
+      "cover2x": "/static/covers/album-14@2x.png"
+    },
+    {
+      "id": 15,
+      "title": "Foobar Track 15",
+      "artist": "Foobar Artist 15",
+      "cover": "/static/covers/album-15.png",
+      "cover2x": "/static/covers/album-15@2x.png"
+    },
+    {
+      "id": 16,
+      "title": "Foobar Track 16",
+      "artist": "Foobar Artist 16",
+      "cover": "/static/covers/album-16.png",
+      "cover2x": "/static/covers/album-16@2x.png"
+    },
+    {
+      "id": 17,
+      "title": "Foobar Track 17",
+      "artist": "Foobar Artist 17",
+      "cover": "/static/covers/album-17.png",
+      "cover2x": "/static/covers/album-17@2x.png"
+    },
+    {
+      "id": 18,
+      "title": "Foobar Track 18",
+      "artist": "Foobar Artist 18",
+      "cover": "/static/covers/album-18.png",
+      "cover2x": "/static/covers/album-18@2x.png"
+    },
+    {
+      "id": 19,
+      "title": "Foobar Track 19",
+      "artist": "Foobar Artist 19",
+      "cover": "/static/covers/album-19.png",
+      "cover2x": "/static/covers/album-19@2x.png"
+    },
+    {
+      "id": 20,
+      "title": "Foobar Track 20",
+      "artist": "Foobar Artist 20",
+      "cover": "/static/covers/album-20.png",
+      "cover2x": "/static/covers/album-20@2x.png"
+    },
+    {
+      "id": 21,
+      "title": "Foobar Track 21",
+      "artist": "Foobar Artist 21",
+      "cover": "/static/covers/album-21.png",
+      "cover2x": "/static/covers/album-21@2x.png"
+    },
+    {
+      "id": 22,
+      "title": "Foobar Track 22",
+      "artist": "Foobar Artist 22",
+      "cover": "/static/covers/album-22.png",
+      "cover2x": "/static/covers/album-22@2x.png"
+    },
+    {
+      "id": 23,
+      "title": "Foobar Track 23",
+      "artist": "Foobar Artist 23",
+      "cover": "/static/covers/album-23.png",
+      "cover2x": "/static/covers/album-23@2x.png"
+    },
+    {
+      "id": 24,
+      "title": "Foobar Track 24",
+      "artist": "Foobar Artist 24",
+      "cover": "/static/covers/album-24.png",
+      "cover2x": "/static/covers/album-24@2x.png"
     }
   ]
 }

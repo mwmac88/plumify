@@ -1,8 +1,9 @@
 <template>
   <div id="trackCover" class="trackcover">
-    <!-- <img src="../assets/covers/album-1.png"> -->
-    {{track.title}}
-  </div>  
+    <figure class="image is-96x96">
+      <img :src="track.cover" :srcset="`${track.cover} 1x, ${track.cover2x} 2x`" alt="Track Cover">
+    </figure>
+  </div>
 </template>
 
 <script>
