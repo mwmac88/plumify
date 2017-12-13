@@ -1,0 +1,32 @@
+// GLOBAL STYLES IN THIS FILE
+
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:400,500');
+
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Open Sans', sans-serif;
+
+// VARIABLES
+$white: #FFF;
+$brand-primary: #34A3B4;
+$brand-secondary: #E1F1F3;
+
+.module {
+  background-color: $brand-secondary;
+  border-radius: 5px;
+  padding: 30px 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-secondary;
+}
+
+// IMPORT OTHER SCSS FILES
+@import './breakpoints';
+@import '~sass-mq';
+@import './bulma-overrides';

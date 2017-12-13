@@ -1,0 +1,32 @@
+// Ovveride bulma primary font
+$family-primary: $font-secondary;
+
+// Ovveride bulma variables
+
+// BUTTONS
+$btn-primary: #35B57F;
+$btn-primary-invert: #2D9C6E;
+$primary: $btn-primary;
+$primary-invert: $btn-primary-invert;
+
+// TITLES
+$title-color: #000;
+
+// Override bulma button text colour
+.button.is-primary {
+  color: $white;
+}
+
+// Override bulma largest title font size
+.is-1 {
+  @include mq($from: fullhd) {
+    font-size: 4.4rem;    
+  }
+}
+
+// is-rounded modifier (to be introduced in bulma 0.6.2)
+.button.is-rounded {
+  border-radius: 290486px;
+  padding-left: 1em;
+  padding-right: 1em;
+}

@@ -63,14 +63,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '~sass-mq';
+@import '../styles/icons';
 
 .primarynav {
   background-color: transparent;
-  height: auto;
-
-  @include mq($from: desktop) {
-    height: 20vh;
-  }
+  z-index: 9;
 
   img {
     max-height: 100%;
@@ -146,42 +143,10 @@ export default {
     }
   }
 }
-
-.ico {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 0.75rem;
-  background-size: 100%;  
-  background-repeat: no-repeat;
-
-  @include mq($from: desktop) {
-    width: 30px;
-    height: 30px;
-    margin-right: 1.5rem;
-    background-position: 0 50%;
-  }
-  
-  &--help {
-    background-image: url('../assets/ui/icons/help-icon.png');
-
-    @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
-      background-image: url('../assets/ui/icons/help-icon@2x.png');
-    }
-  }
-  &--pref {
-    background-image: url('../assets/ui/icons/preferences-icon.png');
-
-    @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
-      background-image: url('../assets/ui/icons/preferences-icon@2x.png');
-    }
-  }
-  &--logout {
-    background-image: url('../assets/ui/icons/logout-icon.png');
-
-    @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
-      background-image: url('../assets/ui/icons/logout-icon@2x.png');
-    }
+.navbar-menu {
+  @include mq($from: tablet, $until:desktop) {
+    max-width: 50%;
+    margin-left: auto;
   }
 }
 </style>
