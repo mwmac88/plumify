@@ -121,6 +121,13 @@ export default {
     @include mq($from: desktop) {
       width: 80px;
       height: 80px;
+      transform: scale(1);
+      transition: transform 0.3s ease-in-out;
+      
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+      }
     }
   }
   &__menu {
