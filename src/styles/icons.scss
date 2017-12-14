@@ -34,4 +34,32 @@
       background-image: url('../assets/ui/icons/logout-icon@2x.png');
     }
   }
+  &--play {
+    background-image: url('../assets/ui/icons/play-icon.png');
+    cursor: pointer;
+
+    @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
+      background-image: url('../assets/ui/icons/play-icon@2x.png');
+    }
+  }
+  &--shuffle {
+    background-image: url('../assets/ui/icons/shuffle-icon.png');
+    cursor: pointer;
+
+    @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
+      background-image: url('../assets/ui/icons/shuffle-icon@2x.png');
+    }
+  }
+  &--repeat {
+    background-image: url('../assets/ui/icons/repeat-icon.png');
+    cursor: pointer;
+
+    @media only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx) {
+      background-image: url('../assets/ui/icons/repeat-icon@2x.png');
+    }
+  }
+
+  &--disabled {
+    opacity: 0.5;
+  }
 }

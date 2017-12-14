@@ -9,8 +9,9 @@
       </div>
     </div>
     <div class="module__body">
+      <!-- {{tracksData.songs.length}} -->
       <div class="trackcover" v-for="(track, index) in tracksData.songs" :key="index">
-        <figure class="image trackcover__img">
+        <figure @click="setCurrentTrack(track) " class="image trackcover__img">
           <img :src="track.cover" :srcset="`${track.cover} 1x, ${track.cover2x} 2x`" alt="Track Cover">
         </figure>
       </div>
@@ -21,12 +22,26 @@
 <script>
 import tracksData from '../assets/tracks.json'
 // import TrackCover from './TrackCover'
+import {mapActions} from 'vuex'
 export default {
   name: 'librarymodule',
   // components: {TrackCover},
   data () {
     return {
-      tracksData: tracksData
+      tracksData: tracksData,
+      audio: ''
+    }
+  },
+  // computed: {
+  // },
+  methods: {
+    ...mapActions({
+      setCurrent: 'ACTION_SET_CURRENTLYPLAYING',
+      setAudioTrack: 'ACTION_SET_AUDIOTRACK'
+    }),
+    setCurrentTrack (objTrack) {
+      this.setCurrent(objTrack)
+      this.setAudioTrack(objTrack.file)
     }
   }
 }
@@ -65,9 +80,9 @@ export default {
   }
   .trackcover__img {
     position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 10px 0;
+    width: 90px;
+    height: 90px;
+    margin: 10px 5px;
 
     @include mq($from: desktop) {
       width: 95px;

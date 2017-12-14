@@ -4,15 +4,18 @@
       <primary-nav/>
     </header>
     <section class="section section__primary">
-      <div class="columns is-variable is-8 is-desktop">
+      <div class="columns is-desktop">
         <div class="column is-8">
-          <library-module  />
+          <library-module/>
         </div>
         <div class="column is-4">
-          <activity-module />
+          <activity-module/>
         </div>
       </div>
     </section>
+    <footer class="footer__controls">
+      <player-controls-module />
+    </footer>
   </div>
 </template>
 
@@ -35,29 +38,42 @@ export default {
 
 <style lang="scss">
   @import './styles/app';
-  @import '~bulma';
 
   .app {
     background-color: $brand-primary;
-
-    @include mq($from: tablet) {
-      padding: 0 40px 0 80px;
-    }
   }
 
   .header {
-    height: 8vh;
-    
+    @include mq($from: tablet) {
+      padding: 20px 40px 0 80px;
+    }
     @include mq($from: desktop) {
       height: 20vh;
     }
   }
   .section__primary {
-    height: 80vh;
-    
+    // height: 80vh;
+    padding: 0.5rem 1rem 15vh 1rem;
+
+    @include mq($from: tablet) {
+      padding: 0 40px 0 80px;
+    }
     @include mq($from: desktop) {
       height: 65vh;
-      padding: 0;
+    }
+  }
+  .footer__controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    // height: 12vh;
+    background-color: #164952;
+    z-index: 9;
+    
+    @include mq($from: desktop) {
+      height: 15vh;
+      padding: 0 40px 0 80px;      
     }
   }
 </style>

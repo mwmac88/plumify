@@ -1,7 +1,10 @@
-// Ovveride bulma primary font
-$family-primary: $font-secondary;
-
 // Ovveride bulma variables
+
+// Ovveride bulma primary font
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Open Sans', sans-serif;
+
+$family-primary: $font-secondary;
 
 // BUTTONS
 $btn-primary: #35B57F;
@@ -9,8 +12,20 @@ $btn-primary-invert: #2D9C6E;
 $primary: $btn-primary;
 $primary-invert: $btn-primary-invert;
 
+// BULMA SLIDER EXTENSION VARS
+$slider-track-background: rgba(89,125,132,0.5);
+
 // TITLES
 $title-color: #000;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-secondary;
+}
 
 // Override bulma button text colour
 .button.is-primary {
@@ -18,9 +33,11 @@ $title-color: #000;
 }
 
 // Override bulma largest title font size
-.is-1 {
+.title.is-1 {
+  font-weight: 300;
+  
   @include mq($from: fullhd) {
-    font-size: 4.4rem;    
+    font-size: 4.4rem;
   }
 }
 

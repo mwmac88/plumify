@@ -1,6 +1,6 @@
 <template>
   <div id="primarynav">
-    <nav class="navbar is-expanded is-transparent primarynav" role="navigation" aria-label="dropdown navigation">
+    <nav class="navbar is-fixed-top is-expanded is-transparent primarynav" role="navigation" aria-label="dropdown navigation">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="/"><img class="primarynav__logo" src="../assets/ui/brand-logo.png" srcset="../assets/ui/brand-logo.png 1x, ../assets/ui/brand-logo@2x.png 2x" alt="plumify Logo"></a>
@@ -62,11 +62,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~sass-mq';
+@import '../styles/app';
 @import '../styles/icons';
 
 .primarynav {
-  background-color: transparent;
+  background-color: $brand-primary;
   z-index: 9;
 
   img {

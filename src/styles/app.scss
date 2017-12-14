@@ -1,10 +1,11 @@
 // GLOBAL STYLES IN THIS FILE
+// IMPORT FILES
+@import '~bulma'; // MAIN BULMA IMPORT
+@import '~sass-mq';
+@import './breakpoints';
 
 // FONTS
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:400,500');
-
-$font-primary: 'Roboto', sans-serif;
-$font-secondary: 'Open Sans', sans-serif;
 
 // VARIABLES
 $white: #FFF;
@@ -14,19 +15,15 @@ $brand-secondary: #E1F1F3;
 .module {
   background-color: $brand-secondary;
   border-radius: 5px;
-  padding: 30px 15px;
-}
+  padding: 15px 10px;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-secondary;
+  @include mq($from: desktop) {
+    padding: 30px 15px;  
+  }
 }
 
 // IMPORT OTHER SCSS FILES
-@import './breakpoints';
-@import '~sass-mq';
 @import './bulma-overrides';
+
+// BULMA EXTENSIONS
+@import '~bulma-slider'; 

@@ -5,28 +5,32 @@
       "title": "Foobar Track",
       "artist": "Foobar Artist",
       "cover": "/static/covers/album-1.png",
-      "cover2x": "/static/covers/album-1@2x.png"
+      "cover2x": "/static/covers/album-1@2x.png",
+      "file": "/static/audio/Track1.mp3"
     },
     {
       "id": 2,
       "title": "Foobar Track 2",
       "artist": "Foobar Artist 2",
       "cover": "/static/covers/album-2.png",
-      "cover2x": "/static/covers/album-2@2x.png"
+      "cover2x": "/static/covers/album-2@2x.png",
+      "file": "/static/audio/Track2.mp3"
     },
     {
       "id": 3,
       "title": "Foobar Track 3",
       "artist": "Foobar Artist 3",
       "cover": "/static/covers/album-3.png",
-      "cover2x": "/static/covers/album-3@2x.png"
+      "cover2x": "/static/covers/album-3@2x.png",
+      "file": "/static/audio/Track3.mp3"
     },
     {
       "id": 4,
       "title": "Foobar Track 4",
       "artist": "Foobar Artist 4",
       "cover": "/static/covers/album-4.png",
-      "cover2x": "/static/covers/album-4@2x.png"
+      "cover2x": "/static/covers/album-4@2x.png",
+      "file": "/static/audio/Track4.mp3"
     },
     {
       "id": 5,
