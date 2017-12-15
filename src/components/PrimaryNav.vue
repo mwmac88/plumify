@@ -1,37 +1,35 @@
 <template>
   <div id="primarynav">
     <nav class="navbar is-fixed-top is-expanded is-transparent primarynav" role="navigation" aria-label="dropdown navigation">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/"><img class="primarynav__logo" src="../assets/ui/brand-logo.png" srcset="../assets/ui/brand-logo.png 1x, ../assets/ui/brand-logo@2x.png 2x" alt="plumify Logo"></a>
-          <button class="button navbar-burger primarynav__menubutton" :class="activeClass" @click="addActive">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        
-        <div class="navbar-menu" :class="activeClass">
-          <div class="navbar-end primarynav__right">
-            <div class="navbar-item primarynav__rightmenu">
-              <div class="navbar-item has-dropdown userprofile" :class="activeClass" @click="addActive">
-                  <img class="userprofile__avatar" src="../assets/avatars/avatar-1.png" srcset="../assets/avatars/avatar-1.png 1x, ../assets/avatars/avatar-1@2x.png 2x" alt="User Avatar">
-                  <div class="navbar-dropdown is-boxed is-right userprofile__menu" :class="activeClass">
-                    <a class="navbar-item" href="#">
-                      <i class="ico ico--help"></i>Help and Support
-                    </a>
-                    <a class="navbar-item" href="#">
-                      <i class="ico ico--pref"></i>Preferences
-                    </a>
-                    <a class="navbar-item" href="#">
-                      <i class="ico ico--logout"></i>Logout
-                    </a>
-                  </div>
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/"><img class="primarynav__logo" src="../assets/ui/brand-logo.png" srcset="../assets/ui/brand-logo.png 1x, ../assets/ui/brand-logo@2x.png 2x" alt="plumify Logo"></a>
+        <button class="button navbar-burger primarynav__menubutton" :class="activeClass" @click="addActive">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      
+      <div class="navbar-menu" :class="activeClass">
+        <div class="navbar-end primarynav__right">
+          <div class="navbar-item primarynav__rightmenu">
+            <div class="navbar-item has-dropdown userprofile" :class="activeClass" @click="addActive">
+                <img class="userprofile__avatar" src="/static/avatars/avatar-3.png" srcset="/static/avatars/avatar-3.png 1x, /static/avatars/avatar-3@2x.png 2x" alt="User Avatar">
+                <div class="navbar-dropdown is-boxed is-right userprofile__menu" :class="activeClass">
+                  <a class="navbar-item" href="#">
+                    <i class="ico ico--help"></i>Help and Support
+                  </a>
+                  <a class="navbar-item" href="#">
+                    <i class="ico ico--pref"></i>Preferences
+                  </a>
+                  <a class="navbar-item" href="#">
+                    <i class="ico ico--logout"></i>Logout
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-      </div>
+        </div>
     </nav>
   </div>
 </template>
@@ -66,8 +64,13 @@ export default {
 @import '../styles/icons';
 
 .primarynav {
-  background-color: $brand-primary;
+  background-color: transparent;
   z-index: 9;
+
+  @include mq($from: desktop) {
+    background-color: #34A3B4;
+    padding: 20px 40px 0 80px;    
+  }
 
   img {
     max-height: 100%;
@@ -142,6 +145,9 @@ export default {
       }
     }
   }
+}
+.navbar-brand {
+  background-color: $brand-primary;
 }
 .navbar-menu {
   @include mq($from: tablet, $until:desktop) {

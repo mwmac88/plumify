@@ -5,12 +5,13 @@
 @import './breakpoints';
 
 // FONTS
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:400,500,700');
 
 // VARIABLES
 $white: #FFF;
 $brand-primary: #34A3B4;
 $brand-secondary: #E1F1F3;
+$brand-tertiary: #35B57F;
 
 .module {
   background-color: $brand-secondary;

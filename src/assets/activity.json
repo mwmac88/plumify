@@ -1,0 +1,61 @@
+{
+  "listens": [
+    {
+      "user": "Ned Stark",
+      "userimg": "/static/avatars/avatar-2",
+      "track": "Foobar Track 8"
+    },
+    {
+      "user": "Daenerys Targaryen",
+      "userimg": "/static/avatars/avatar-4",
+      "track": "Foobar Track 1"
+    },
+    {
+      "user": "John Snow",
+      "userimg": "/static/avatars/avatar-1",
+      "track": "Foobar Track 9"
+    },
+    {
+      "user": "Tyrion Lannister",
+      "userimg": "/static/avatars/avatar-3",
+      "track": "Foobar Track 21"
+    },
+    {
+      "user": "Arya Stark",
+      "userimg": "/static/avatars/avatar-5",
+      "track": "Foobar Track 20"
+    },
+    {
+      "user": "Arya Stark",
+      "userimg": "/static/avatars/avatar-5",
+      "track": "Foobar Track 12"
+    },
+    {
+      "user": "Daenerys Targaryen",
+      "userimg": "/static/avatars/avatar-4",
+      "track": "Foobar Track 2"
+    },
+    {
+      "user": "Tyrion Lannister",
+      "userimg": "/static/avatars/avatar-3",
+      "track": "Foobar Track 4"
+    },
+    {
+      "user": "Ned Stark",
+      "userimg": "/static/avatars/avatar-2",
+      "track": "Foobar Track 17"
+    },
+    {
+      "user": "John Snow",
+      "userimg": "/static/avatars/avatar-1",
+      "track": "Foobar Track 6"
+    }
+  ],
+  "shares": [
+    {
+      "user": "Arya Stark",
+      "userimg": "/static/avatars/avatar-5",
+      "playlist": "foobar"
+    }
+  ]
+}

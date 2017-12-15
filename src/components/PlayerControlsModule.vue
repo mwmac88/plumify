@@ -1,6 +1,6 @@
 <template>
   <div id="playerControls" class="playercontrols is-flex">
-    <div class="container playercontrols__container">
+    <div class="playercontrols__container">
 
         <div class="columns">
           <div class="column is-12-mobile is-9-desktop is-flex">
@@ -22,8 +22,8 @@
                 </div>
      
           </div>
-          <div class="column is-hidden-mobile is-3 level-right">
-
+          <div class="column is-hidden-touch is-3 level-right">
+            <user-activity v-for="(share, index) in userShares" :useraction="share" :key="index" />
           </div>
         </div>
 
@@ -35,12 +35,20 @@
 <script>
 // VUEX GETTERS
 import { mapGetters, mapActions } from 'vuex'
+
+import userActivities from '../assets/activity.json'
+import UserActivity from './UserActivity'
+
 export default {
   name: 'playercontrolsmodule',
   data () {
     return {
-      playtime: 0
+      playtime: 0,
+      userShares: userActivities.shares
     }
+  },
+  components: {
+    UserActivity
   },
   computed: {
     ...mapGetters({
@@ -96,6 +104,7 @@ export default {
       padding: 5px 10px;
 
       @include mq($from: desktop) {
+        width: 100%;
         margin: 0;
       }
     }
@@ -132,6 +141,9 @@ export default {
       padding: 0 !important;
       font-size: 1rem !important;
       margin-left: 0 !important;
+    }
+    .useractivity__username {
+      color: $white;
     }
   }
 </style>

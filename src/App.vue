@@ -5,10 +5,10 @@
     </header>
     <section class="section section__primary">
       <div class="columns is-desktop">
-        <div class="column is-8">
+        <div class="column is-7-desktop is-8-widescreen">
           <library-module/>
         </div>
-        <div class="column is-4">
+        <div class="column is-5-desktop is-4-widescreen">
           <activity-module/>
         </div>
       </div>
@@ -37,29 +37,32 @@ export default {
 </script>
 
 <style lang="scss">
+  // Import global styles
   @import './styles/app';
 
+  html,
   .app {
     background-color: $brand-primary;
   }
 
   .header {
-    @include mq($from: tablet) {
-      padding: 20px 40px 0 80px;
-    }
-    @include mq($from: desktop) {
-      height: 20vh;
-    }
+    height: auto;
+    
+    // @include mq($from: desktop) {
+    //   height: 8vh;
+    // }
+    // @include mq($from: wide) {
+    //   height: 12vh;
+    // }
   }
-  .section__primary {
-    // height: 80vh;
-    padding: 0.5rem 1rem 15vh 1rem;
 
-    @include mq($from: tablet) {
-      padding: 0 40px 0 80px;
-    }
-    @include mq($from: desktop) {
-      height: 65vh;
+  // Main Body Content Section - Library/Activity
+  .section__primary {
+    padding: 0.5rem 1rem 1rem 1rem;
+    height: auto;
+
+    @include mq($from: wide) {
+      padding: 0.5rem 40px 1rem 80px;   
     }
   }
   .footer__controls {
@@ -67,13 +70,11 @@ export default {
     bottom: 0;
     left: 0;
     width: 100vw;
-    // height: 12vh;
     background-color: #164952;
     z-index: 9;
     
     @include mq($from: desktop) {
-      height: 15vh;
-      padding: 0 40px 0 80px;      
+      padding: 0 40px 0 80px;
     }
   }
 </style>

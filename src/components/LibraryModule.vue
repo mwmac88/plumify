@@ -72,11 +72,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-
-    @include mq($from: desktop) {
-      justify-content: space-between;
-    }
+    justify-content: center;
   }
   .trackcover__img {
     position: relative;
