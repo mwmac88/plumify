@@ -8,6 +8,16 @@
     <div class="module__body">
       <user-activity v-for="(useraction, index) in dataSubset" :useraction="useraction" :key="index" />
     </div>
+    <div class="module__controls">
+      <div class="field is-flex activity__controlscontainer">
+        <div class="control">
+          <button class="button is-light is-medium is-rounded" disabled>Prev</button>
+        </div>
+        <div class="control">
+          <button class="button is-light is-medium is-rounded">Next</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,6 +51,11 @@ export default {
   @import '../styles/app';
 
   .activity {
-    
+    &__controlscontainer {
+      justify-content: center;
+    }
+    .button {
+      margin-right: 10px;
+    }
   }
 </style>

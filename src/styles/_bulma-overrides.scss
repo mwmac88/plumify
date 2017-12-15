@@ -13,6 +13,8 @@ $btn-primary-invert: #2D9C6E;
 $primary: $btn-primary;
 $primary-invert: $btn-primary-invert;
 
+$grey-darker: #B5B5B5;
+
 // BULMA SLIDER EXTENSION VARS
 $slider-track-background: rgba(89,125,132,0.5);
 
@@ -35,6 +37,16 @@ h6 {
 // Override bulma button text colour
 .button.is-primary {
   color: $white;
+}
+
+.button.is-light {
+  color: $white;
+  background-color: $grey-darker;
+
+  &:disabled {
+    background-color: $grey-darker;
+    opacity: 0.5;
+  }
 }
 
 // Override bulma largest title font size

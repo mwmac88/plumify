@@ -13,6 +13,7 @@
       <div class="trackcover" v-for="(track, index) in tracksData.songs" :key="index">
         <figure @click="setCurrentTrack(track) " class="image trackcover__img">
           <img :src="track.cover" :srcset="`${track.cover} 1x, ${track.cover2x} 2x`" alt="Track Cover">
+          <audio :src="track.file" :ref="track.id"></audio>
         </figure>
       </div>
     </div>
@@ -32,16 +33,18 @@ export default {
       audio: ''
     }
   },
-  // computed: {
-  // },
   methods: {
     ...mapActions({
       setCurrent: 'ACTION_SET_CURRENTLYPLAYING',
-      setAudioTrack: 'ACTION_SET_AUDIOTRACK'
+      setAudioTrack: 'ACTION_SET_AUDIOTRACK',
+      notify: 'ACTION_NOTIFY'
     }),
     setCurrentTrack (objTrack) {
+      let id = objTrack.id
+      let audioref = this.$refs
       this.setCurrent(objTrack)
-      this.setAudioTrack(objTrack.file)
+      this.setAudioTrack({audioref, id})
+      this.notify()
     }
   }
 }

@@ -15,7 +15,8 @@ const store = new Vuex.Store({
     currentlyPlaying: {
       title: '',
       artist: '',
-      cover: ''
+      cover: '',
+      file: ''
     },
     songPlaying: false,
     audioTrack: {}
@@ -30,6 +31,16 @@ const store = new Vuex.Store({
     },
     ACTION_SET_AUDIOTRACK: function ({commit}, payload) {
       commit(SET_AUDIOTRACK, payload)
+    },
+    ACTION_NOTIFY: function ({state}) {
+      // JS Notification API
+      if (window.Notification && Notification.permission !== 'denied') {
+        Notification.requestPermission(function (status) {  // status is "granted", if accepted by user
+          return new Notification('Song Now Playing', {
+            body: state.currentlyPlaying.title + ' is now playing!'
+          })
+        })
+      }
     }
   },
   mutations: {
@@ -43,8 +54,8 @@ const store = new Vuex.Store({
       state.songPlaying = false
     },
     SET_AUDIOTRACK: (state, payload) => {
-      let audio = new Audio(payload)
-      state.audioTrack = audio
+      let audio = payload.audioref[payload.id]
+      state.audioTrack = audio[0]
     }
   },
   getters: {

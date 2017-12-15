@@ -15,7 +15,7 @@
                   <input class="slider is-fullwidth is-small is-circle" v-model="playtime" step="1" min="0" max="120" value="60" type="range">
                   <output class="slider__time" for="sliderWithValue" type="number">{{calcmins}}</output>
                   <div class="playercontrols__playshufrep">
-                    <i class="ico ico--play" :class="{'ico--disabled': !songPlaying}" @click="songPause"></i>
+                    <i class="ico ico--play" :class="{'ico--disabled': !songPlaying}"></i>
                     <i class="ico ico--shuffle ico--disabled"></i>
                     <i class="ico ico--repeat ico--disabled"></i>
                   </div>
@@ -73,18 +73,10 @@ export default {
     }),
     playpauseSong () {
       let audio = new Audio(this.currentlyPlaying.file)
-      console.log(audio)
       if (this.songPlaying) {
         audio.play()
-        console.log('PLAY SONG')
       } else {
         audio.pause()
-        console.log('PAUSE SONG')
-      }
-    },
-    songPause () {
-      if (this.songPlaying) {
-        this.stopPlaying()
       }
     }
   }
