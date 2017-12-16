@@ -15,7 +15,7 @@
                   <input class="slider is-fullwidth is-small is-circle" v-model="playtime" step="1" min="0" max="120" value="60" type="range">
                   <output class="slider__time" for="sliderWithValue" type="number">{{calcmins}}</output>
                   <div class="playercontrols__playshufrep">
-                    <i class="ico ico--play" :class="{'ico--disabled': !songPlaying}"></i>
+                    <i class="ico ico--play" :class="{'ico--disabled': !songPlaying}" @click="stopPlayClick"></i>
                     <i class="ico ico--shuffle ico--disabled"></i>
                     <i class="ico ico--repeat ico--disabled"></i>
                   </div>
@@ -53,7 +53,8 @@ export default {
   computed: {
     ...mapGetters({
       currentlyPlaying: 'GET_CURRENTLYPLAYING',
-      songPlaying: 'GET_SONGPLAYING'
+      songPlaying: 'GET_SONGPLAYING',
+      lastPlayed: 'GET_CURR_TRACK'
     }),
     calcmins () {
       let minutes = Math.floor(this.playtime / 60)
@@ -62,21 +63,24 @@ export default {
       return time
     }
   },
-  watch: {
-    songPlaying () {
-      this.playpauseSong()
-    }
-  },
   methods: {
     ...mapActions({
-      stopPlaying: 'ACTION_STOP_PLAYING'
+      stopPlaying: 'ACTION_STOP_PLAYING',
+      startPlaying: 'ACTION_SET_CURRENTLYPLAYING',
+      setAudioTrack: 'ACTION_SET_AUDIOTRACK',
+      notify: 'ACTION_NOTIFY'
     }),
-    playpauseSong () {
-      let audio = new Audio(this.currentlyPlaying.file)
+    stopPlayClick () {
       if (this.songPlaying) {
-        audio.play()
+        this.stopPlaying()
       } else {
-        audio.pause()
+        if (this.currentlyPlaying.file !== '') {
+          let playlast = new Audio(this.currentlyPlaying.file)
+          this.startPlaying(this.currentlyPlaying)
+          this.setAudioTrack(playlast)
+          this.notify()
+          playlast.play()
+        }
       }
     }
   }

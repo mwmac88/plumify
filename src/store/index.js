@@ -51,11 +51,13 @@ const store = new Vuex.Store({
       state.songPlaying = true
     },
     SET_STOPSONGPLAYING: state => {
-      state.songPlaying = false
+      if (state.songPlaying) {
+        state.songPlaying = false
+        state.audioTrack.pause()
+      }
     },
     SET_AUDIOTRACK: (state, payload) => {
-      let audio = payload.audioref[payload.id]
-      state.audioTrack = audio[0]
+      state.audioTrack = payload
     }
   },
   getters: {

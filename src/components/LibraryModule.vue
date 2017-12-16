@@ -13,7 +13,7 @@
       <div class="trackcover" v-for="(track, index) in tracksData.songs" :key="index">
         <figure @click="setCurrentTrack(track) " class="image trackcover__img">
           <img :src="track.cover" :srcset="`${track.cover} 1x, ${track.cover2x} 2x`" alt="Track Cover">
-          <audio :src="track.file" :ref="track.id"></audio>
+          <audio :src="track.file" :ref="track.filename"></audio>
         </figure>
       </div>
     </div>
@@ -23,7 +23,7 @@
 <script>
 import tracksData from '../assets/tracks.json'
 // import TrackCover from './TrackCover'
-import {mapActions} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 export default {
   name: 'librarymodule',
   // components: {TrackCover},
@@ -33,18 +33,49 @@ export default {
       audio: ''
     }
   },
+  computed: {
+    ...mapGetters({
+      songinprog: 'GET_SONGPLAYING',
+      currTrack: 'GET_CURR_TRACK',
+      currPlaying: 'GET_CURRENTLYPLAYING'
+    })
+  },
   methods: {
     ...mapActions({
       setCurrent: 'ACTION_SET_CURRENTLYPLAYING',
       setAudioTrack: 'ACTION_SET_AUDIOTRACK',
-      notify: 'ACTION_NOTIFY'
+      notify: 'ACTION_NOTIFY',
+      stopPlaying: 'ACTION_STOP_PLAYING'
     }),
     setCurrentTrack (objTrack) {
-      let id = objTrack.id
-      let audioref = this.$refs
-      this.setCurrent(objTrack)
-      this.setAudioTrack({audioref, id})
-      this.notify()
+      // SET NEW AUDIO FILE ON PLAY
+      let audio = new Audio(objTrack.file)
+      // IF SONG CURRENTLY PLAYING
+      if (this.songinprog) {
+        let newAudio = new Audio(objTrack.file)
+        // CHECK IF SAME SONG AS CURRENT
+        if (this.currPlaying.file === objTrack.file) {
+          // IF SAME SONG - STOP PLAYING
+          this.stopPlaying()
+        } else {
+          // IF NOT SAME SONG - STOP CURRENT AND START SELECTED
+          this.stopPlaying()
+          this.setAudioTrack(newAudio)
+          this.setCurrent(objTrack)
+          this.notify()
+          newAudio.play()
+        }
+      } else {
+        // NO CURRENT SONG PLAYING - START SELECTED AND UPDATED STATE
+        audio.play()
+        this.setCurrent(objTrack)
+        this.setAudioTrack(audio)
+        this.notify()
+        // UPDATE STATE ON END OF SONG
+        audio.onended = () => {
+          this.stopPlaying()
+        }
+      }
     }
   }
 }
